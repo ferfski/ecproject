@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'products#index'
+
+  get 'products/:id' => 'products#show', constraints: {id: /\d+/}, as: 'product'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
